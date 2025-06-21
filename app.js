@@ -7,6 +7,8 @@ const lI = document.getElementById("li");
 const Verb = document.getElementById("verb");
 const Adjective = document.getElementById("adjective");
 const error = document.getElementById("error");
+const PlayBtn  = document.getElementById('playBtn');
+const noResult = document.getElementById("no-result");
 
 // Function to set theme
 //
@@ -23,16 +25,24 @@ ThemeToggle.addEventListener("click", () => {
     : "dark";
   localStorage.setItem("theme", theme);
 });
-
+let audio = null ;
 const Search = async (word) => {
   try {
+  
+    // loader.style.display = "block";  // Show spinner
+ // Hide spinner
     const api = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     const response = await fetch(`${api}`);
     const data = await response.json();
     console.log(data[0].word);
     console.log(data);
+    // loader.style.display = "none";  
     Words.innerText = `${data[0].word}`;
     phonetics.innerText = `${data[0].phonetics[0].text}`;
+   
+   
+     
+
     const Alldefinitions = data[0].meanings[0].definitions;
     lI.innerHTML = Alldefinitions.map((items, index) => {
       console.log(items.definition);
@@ -61,3 +71,8 @@ const Search = async (word) => {
   }
 };
 
+PlayBtn.addEventListener('click',()=>{
+  if (audio) {
+    audio.play()
+  }
+})

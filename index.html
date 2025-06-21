@@ -31,7 +31,7 @@
         <div class="input">
           <input type="text" id="input" placeholder="Search for any Word" />
           <img
-            src="/logo/logoThree.svg"
+            src="./Logo/logoThree.svg"
             onclick="Search(inputs.value)"
             id="searchbtn"
             class="searchbtn"
@@ -39,71 +39,78 @@
         </div>
       </div>
 
-      <div id="error">
-        <div class="SectionOne">
-          <div class="sub-sec">
-            <div>
-              <h1 id="word">Keyboard</h1>
-              <p class="subsecone" id="phonetic">/ˈkiːbɔːd/</p>
-            </div>
-            <img src="./logo/icon-play.svg" class="play" />
-          </div>
-        </div>
+      <div class="NoResult">
+        <p id="no-result" style="text-align: center; color: red; display: none">
+          No results found. Please try another word.
+        </p>
 
-        <div class="sectionTwo">
-          <div class="sub-secT">
-            <div>
-              <h3>noun</h3>
-              <hr />
-              <p class="subSectwo">Meaning</p>
+        <div id="error">
+          <div class="SectionOne">
+            <div class="sub-sec">
+              <div>
+                <h1 id="word">Keyboard</h1>
+                <p class="subsecone" id="phonetic">/ˈkiːbɔːd/</p>
+              </div>
+              <img src="./Logo/LogoFour.svg" class="play" id="playBtn" />
             </div>
-            <ul id="li">
-              <li>
-                (etc.) A set of keys used to operate a typewriter, computer etc.
+          </div>
+
+          <div class="sectionTwo">
+            <div class="sub-secT">
+              <div>
+                <h3>noun</h3>
+                <hr />
+                <p class="subSectwo">Meaning</p>
+              </div>
+              <ul id="li">
+                <li>
+                  (etc.) A set of keys used to operate a typewriter, computer
+                  etc.
+                  <br />
+                </li>
                 <br />
-              </li>
-              <br />
-              <li>
-                A component of many instruments including the piano, organ, and
-                harpsichord consisting of usually black and white keys that
-                cause different tones to be produced when struck.
-              </li>
-              <li>
-                A device with keys of a musical keyboard, used to control
-                electronic sound-producing devices which may be built into or
-                separate from the keyboard device.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="sectionTwo">
-          <div class="sub-secT">
-            <div>
-              <h3>verb</h3>
-              <hr />
-              <p class="subSectwo">Meaning</p>
+                <li>
+                  A component of many instruments including the piano, organ,
+                  and harpsichord consisting of usually black and white keys
+                  that cause different tones to be produced when struck.
+                </li>
+                <li>
+                  A device with keys of a musical keyboard, used to control
+                  electronic sound-producing devices which may be built into or
+                  separate from the keyboard device.
+                </li>
+              </ul>
             </div>
-            <ul id="verb">
-              <li>To type on a computer keyboard.</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="sectionTwo">
-          <div class="sub-secT">
-            <div>
-              <h3 class="adjective">adjective</h3>
-              <hr />
-              <p class="subSectwo">Meaning</p>
+          <div class="sectionTwo">
+            <div class="sub-secT">
+              <div>
+                <h3>verb</h3>
+                <hr />
+                <p class="subSectwo">Meaning</p>
+              </div>
+              <ul id="verb">
+                <li>To type on a computer keyboard.</li>
+              </ul>
             </div>
-            <ul id="adjective">
-              <li>To type on a computer keyboard.</li>
-            </ul>
+          </div>
+
+          <div class="sectionTwo">
+            <div class="sub-secT">
+              <div>
+                <h3 class="adjective">adjective</h3>
+                <hr />
+                <p class="subSectwo">Meaning</p>
+              </div>
+              <ul id="adjective">
+                <li>To type on a computer keyboard.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="./app.js"></script>
   </body>
+  <script src="./app.js"></script>
 </html>
