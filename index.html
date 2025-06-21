@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <div class="header-con">
+        <div class="header">
+          <img src="/logo/logoOne.svg" class="iconOne" alt="" />
+          <div class="left">
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider round" id="btn"></span>
+            </label>
+            <img src="/logo/logotwo.svg" class="iconTwo" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="inputCon">
+        <div class="input">
+          <input type="text" id="input" placeholder="Search for any Word" />
+          <img
+            src="/logo/logoThree.svg"
+            onclick="Search(inputs.value)"
+            id="searchbtn"
+            class="searchbtn"
+          />
+        </div>
+      </div>
+
+      <div id="error">
+        <div class="SectionOne">
+          <div class="sub-sec">
+            <div>
+              <h1 id="word">Keyboard</h1>
+              <p class="subsecone" id="phonetic">/ˈkiːbɔːd/</p>
+            </div>
+            <img src="./logo/icon-play.svg" class="play" />
+          </div>
+        </div>
+
+        <div class="sectionTwo">
+          <div class="sub-secT">
+            <div>
+              <h3>noun</h3>
+              <hr />
+              <p class="subSectwo">Meaning</p>
+            </div>
+            <ul id="li">
+              <li>
+                (etc.) A set of keys used to operate a typewriter, computer etc.
+                <br />
+              </li>
+              <br />
+              <li>
+                A component of many instruments including the piano, organ, and
+                harpsichord consisting of usually black and white keys that
+                cause different tones to be produced when struck.
+              </li>
+              <li>
+                A device with keys of a musical keyboard, used to control
+                electronic sound-producing devices which may be built into or
+                separate from the keyboard device.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sectionTwo">
+          <div class="sub-secT">
+            <div>
+              <h3>verb</h3>
+              <hr />
+              <p class="subSectwo">Meaning</p>
+            </div>
+            <ul id="verb">
+              <li>To type on a computer keyboard.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sectionTwo">
+          <div class="sub-secT">
+            <div>
+              <h3 class="adjective">adjective</h3>
+              <hr />
+              <p class="subSectwo">Meaning</p>
+            </div>
+            <ul id="adjective">
+              <li>To type on a computer keyboard.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

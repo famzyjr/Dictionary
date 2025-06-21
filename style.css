@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+:root {
+  --primary-color: #1f1f1f;
+  --background-color: #050505;
+  --text-color: #fff;
+  --input-color: #1f1f1f;
+}
+.light-theme {
+  --primary-color: #eaeaea;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --input-color: #eaeaea;
+}
+.con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-con {
+  display: flex;
+  justify-content: center;
+}
+.left {
+  padding-left: 400px;
+  display: flex;
+  gap: 20px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.inputCon {
+  display: flex;
+  justify-content: center;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 500px;
+  height: 50px;
+  border-radius: 11px;
+  padding: 10px 10px 10px 10px;
+}
+.adjective {
+  font-size: 20px;
+  position: relative;
+  bottom: 15px;
+  right: 20px;
+}
+input {
+  background-color: var(--input-color);
+  border: none;
+  color: var(--text-color);
+  outline: none;
+  width: 500px;
+}
+.searchbtn {
+  width: 15px;
+}
+::placeholder {
+  color: var(--text-color);
+}
+
+.input:focus-within {
+  border: 2px solid #a445ed;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+}
+
+.line {
+  border-bottom: 1px var(--text-color) solid;
+  width: 500px;
+  margin-left: 500px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 15px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #a445ed;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 100%;
+}
+
+.SectionOne {
+  display: flex;
+  justify-content: center;
+}
+
+.sub-sec {
+  display: flex;
+  justify-content: center;
+  gap: 240px;
+}
+
+.subsecone {
+  color: #8544ed;
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+hr {
+  position: relative;
+  bottom: 45px;
+  left: 80px;
+}
+
+ul li {
+  width: 500px;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.sectionTwo {
+  display: flex;
+  justify-content: center;
+}
+.subSectwo {
+  color: #757575;
+}
+li::marker {
+  color: #8544ed;
+}
+
+@media screen and (max-width: 790px) {
+  hr {
+    max-width: 400px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input {
+    width: 300px;
+    height: 50px;
+    border-radius: 11px;
+    padding: 10px 10px 10px 10px;
+    /* background-color: green; */
+  }
+
+  input {
+    width: 300px;
+  }
+
+  .iconOne,
+  .iconTwo {
+    width: 20px;
+  }
+
+  hr {
+    max-width: 100px;
+    margin-left: 20px;
+  }
+
+  h3 {
+    margin-left: 20px;
+  }
+  p {
+    margin-left: 30px;
+  }
+  ul li {
+    font-size: 15px;
+    width: 300px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .header-con {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .iconOne {
+    position: relative;
+    left: 140px;
+  }
+  .play {
+    position: relative;
+    right: 50px;
+    width: 40px;
+  }
+}
+@media screen and (max-width: 580px) {
+  h1 {
+    position: relative;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    text-align: center;
+  }
+  .iconOne {
+    position: absolute;
+    left: 70px;
+  }
+
+  .play {
+    position: relative;
+    right: 60px;
+  }
+}
