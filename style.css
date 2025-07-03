@@ -217,7 +217,12 @@ li::marker {
     height: 50px;
     border-radius: 11px;
     padding: 10px 10px 10px 10px;
-    /* background-color: green; */
+  }
+
+  .slider.round{
+     position: absolute;
+     left: 20px;
+     
   }
 
   input {
