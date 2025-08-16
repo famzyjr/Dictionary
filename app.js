@@ -9,8 +9,10 @@ const Adjective = document.getElementById("adjective");
 const error = document.getElementById("error");
 const PlayBtn = document.getElementById("playBtn");
 const noResult = document.getElementById("no-result");
-
+const LoadingIncator = document.getElementById('loadingIndicator');
+const Con = document.getElementById('aa');
 // Function to set theme
+
 //
 
 // Event listener
@@ -27,47 +29,51 @@ ThemeToggle.addEventListener("click", () => {
 });
 let audio = null;
 
- document.addEventListener('keydown', async (e) => {
-  if (e.key === 'Enter') {
-    const word = inputs.value.trim(); // use existing variable "inputs"
-    if (!word) return;
 
-    try {
-      const api = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-      const response = await fetch(api);
-      const data = await response.json();
 
-      console.log(data[0].word);
-      Words.innerText = data[0].word;
-      phonetics.innerText = data[0].phonetics?.[0]?.text || "N/A";
+inputs.addEventListener('input', async (e) => {
+  const word = inputs.value.trim(); // use existing variable "inputs"
+  if (!word) return;
+  try {
+    LoadingIncator.style.display = 'block';
+    const api = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    const response = await fetch(api);
+    const data = await response.json();
 
-      const Alldefinitions = data[0].meanings?.[0]?.definitions || [];
-      lI.innerHTML = Alldefinitions.map(item => `<li>${item.definition}</li>`).join("");
+    console.log(data[0].word);
+    Words.innerText = data[0].word;
+    phonetics.innerText = data[0].phonetics?.[0]?.text || "N/A";
 
-      const AlldefinitionsVerb = data[0].meanings?.[1]?.definitions || [];
-      Verb.innerHTML = AlldefinitionsVerb.map(item => `<li>${item.definition}</li>`).join("");
+    const Alldefinitions = data[0].meanings?.[0]?.definitions || [];
+    lI.innerHTML = Alldefinitions.map(item => `<li>${item.definition}</li>`).join("");
 
-      const AlldefinitionsAdjective = data[0].meanings?.[2]?.definitions || [];
+    const AlldefinitionsVerb = data[0].meanings?.[1]?.definitions || [];
+    Verb.innerHTML = AlldefinitionsVerb.map(item => `<li>${item.definition}</li>`).join("");
 
-      if (AlldefinitionsAdjective.length === 0) {
-        Adjective.innerHTML = `<li>Meaning not found</li>`;
-      } else {
-        Adjective.innerHTML = AlldefinitionsAdjective.map(item => `<li>${item.definition}</li>`).join("");
-      }
+    const AlldefinitionsAdjective = data[0].meanings?.[2]?.definitions || [];
 
-      // Set audio if available
-      const audioSrc = data[0].phonetics.find(p => p.audio)?.audio;
-      if (audioSrc) {
-        audio = new Audio(audioSrc);
-      }
-
-    } catch (err) {
-      console.error("Fetch error:", err);
-      error.innerText = "Word not found".style.color ='red';
-      
+    if (AlldefinitionsAdjective.length === 0) {
+      Adjective.innerHTML = `<li>Meaning not found</li>`;
+    } else {
+      Adjective.innerHTML = AlldefinitionsAdjective.map(item => `<li>${item.definition}</li>`).join("");
     }
+
+    // Set audio if available
+    const audioSrc = data[0].phonetics.find(p => p.audio)?.audio;
+    if (audioSrc) {
+      audio = new Audio(audioSrc);
+    }
+
+  } catch (err) {
+    const NotFound = "Word not found";
+    console.error("Fetch error:", err);
+   Con.innerHTML = `${NotFound}`;
+
+  } finally {
+  
   }
-});
+}
+);
 
 PlayBtn.addEventListener("click", () => {
   if (audio) {
@@ -76,15 +82,4 @@ PlayBtn.addEventListener("click", () => {
 });
 
 
-console.log('name');
 
-const wordss=(weather)=>{
-  if(weather === 'clear'){
- return 'what a good day'
-}else{
-  return null
-}
-
-}
-
-console.log(wordss('clear'));

@@ -16,7 +16,7 @@
     <div>
       <div class="header-con">
         <div class="header">
-          <img src="/logo/logoOne.svg" class="iconOne" alt="" />
+          <img src="Logo/logoOne.svg" class="iconOne" alt="" />
           <div class="left">
             <label class="switch">
               <input type="checkbox" checked />
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-
+    
       <div class="inputCon">
         <div class="input">
           <input type="text" id="input" placeholder="Search for any Word" />
@@ -38,12 +38,12 @@
           />
         </div>
       </div>
-
-      <div class="NoResult">
+       <div id="aa">
+        <div class="NoResult">
         <p id="no-result" style="text-align: center; color: red; display: none">
           No results found. Please try another word.
         </p>
-
+       <div class="loading" style="display: none;">Loading data... <span class="loader" id="loadingIndicator" ></span></div>
         <div id="error">
           <div class="SectionOne">
             <div class="sub-sec">
@@ -110,6 +110,8 @@
           </div>
         </div>
       </div>
+       </div>
+      
     </div>
   </body>
   <script src="./app.js"></script>
